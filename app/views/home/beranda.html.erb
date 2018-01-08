@@ -1,0 +1,25 @@
+<h1>Halaman Home</h1>
+
+<h2><%= @merk %></h2>
+<ul>
+<% @motor.each do |motor| %>
+    <li><%= motor %></li>
+    <% end %>
+</ul>
+
+<table>
+<tr>
+    <td>id</td>
+    <td>title</td>
+    <td>page</td>
+    <td>description</td>    
+</tr>
+    <% @books.each do |b| %>
+<tr>
+    <td><%= b.id %></td>
+    <td><%= b.title %></td>
+    <td><%= b.page %></td>
+    <td><%= b.description %></td>
+</tr>
+    <% end %>
+</table>
