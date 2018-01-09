@@ -1,4 +1,5 @@
  class HomeController < ApplicationController
+
     def beranda
         #render plain: 'Hallo ini adalah halaman home'
         @motor = ['honda', 'yamaha', 'suzuki', 'kawasaki', 'ktm', 'bmw']
@@ -16,5 +17,7 @@
         else
             @title = 'buku tidak ditemukan'
         end
+
+        render layout: 'about'
     end
  end

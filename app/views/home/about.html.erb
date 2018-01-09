@@ -1,5 +1,13 @@
 <h1>Halaman About</h1>
 
+<%= content_for :menu do %>
+    <p>ini adalah menu</p>    
+<% end %>
+
 <h2>
 <%= @title %>
 </h2>
+
+<%= render 'information', produk_laris: @title%>
+
+<div id="coba">click me</div>
