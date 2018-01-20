@@ -2,12 +2,12 @@ class BooksController < ApplicationController
     #index -> menampilkan semua data buku
     #http method get
     def index
-    
+        @books = Book.all
     end
     #show -> menampilkan 1 data buku
     #http method get
     def show
-
+        @book = Book.find(params[:id])
     end
 
     #new -> menampilkan form jika ingin membuat buku baru
@@ -24,6 +24,17 @@ class BooksController < ApplicationController
         book = Book.new(resource_params)
         book.save
         render plain: 'sukses menambah buku'
+    end
+
+    def edit
+        @book = Book.find(params[:id])    
+    end
+
+    def update
+        @book = Book.find(params[:id])
+        @book.update(resource_params)
+        # @book.title = params[:book][:title]
+        render plain: 'sukses mengupdate data buku'
     end
 
     private
