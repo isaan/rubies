@@ -37,6 +37,31 @@ class BooksController < ApplicationController
         render plain: 'sukses mengupdate data buku'
     end
 
+    def destroy
+        book = Book.find(params[:id])
+        book.destroy        
+        render plain: 'berhasil menghapus data buku'        
+    end
+
+    def active
+        @books = Book.where(status: 1)
+        render 'index'
+    end
+
+    def toggle_nonaktif
+        @book = Book.find(params[:id])
+        @book.status = 0
+        @book.save
+        render plain: 'buku berhasil di non aktifkan'
+    end
+
+    def toggle_aktif
+        @book = Book.find(params[:id])
+        @book.status = 1
+        @book.save
+        render plain: 'buku berhasil di aktifkan'
+    end
+
     private
 
     def resource_params

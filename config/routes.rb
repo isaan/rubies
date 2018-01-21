@@ -9,8 +9,15 @@ Rails.application.routes.draw do
   # get '/books/new', to: 'books#new'
   # post '/books', to: 'books#create'
 
+  # route manual utk url status buku
+  #get '/books/active', to: 'books#active'
+
   #semua resources http method akan ditampilkan
-  resources :books
+  resources :books do
+    get :active, on: :collection
+    patch :toggle_nonaktif, on: :member 
+    patch :toggle_aktif, on: :member
+  end
 
   #resources yg akan ditampilkan hanya index dan show
   #resources :books, only: [:index, :show]
