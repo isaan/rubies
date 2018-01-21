@@ -21,9 +21,12 @@ class BooksController < ApplicationController
     #http method post
     def create
         #render plain: params.inspect
-        book = Book.new(resource_params)
-        book.save
-        render plain: 'sukses menambah buku'
+        @book = Book.new(resource_params)
+        if @book.save
+            render plain: 'sukses menambah buku'
+        else
+            render 'new'
+        end
     end
 
     def edit
