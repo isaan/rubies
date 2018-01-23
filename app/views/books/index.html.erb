@@ -5,11 +5,13 @@
     <div><%= b.page %></div>
     <div><%= b.description %></div>
     <div><%= b.status %></div>    
-    <div> <%= link_to 'show', book_path(b) %> </div>
-    <div> <%= link_to 'edit', edit_book_path(b) %> </div>
-    <div> <%= link_to 'delete', book_path(b) , method: :delete %> </div> 
-    <div> <%= link_to 'non active', toggle_nonaktif_book_path(b) , method: :patch %> </div>
-    <div> <%= link_to 'active', toggle_aktif_book_path(b) , method: :patch %> </div>            
+    <div> 
+    <%= link_to 'show', book_path(b) %> 
+    <%= link_to 'edit', edit_book_path(b) %>
+    <%= link_to 'delete', book_path(b) , method: :delete %> 
+    <%= link_to 'non active', toggle_nonaktif_book_path(b) , method: :patch %> 
+    <%= link_to 'active', toggle_aktif_book_path(b) , method: :patch %>
+    </div>            
     <hr>
 </div>
 <% end %>
